@@ -6,7 +6,7 @@ An example project using a hierarchy of images and using Snyk to test each in tu
 
 ### Base
 
-This is out internal base image. It's maintained by a central team who are resonsible for any vulnerabilities in it. This is why we're not using a multi-stage Dockerfile here, because each Dockerfile, and the resulting image, is owned by a separate team.
+This is our internal base image. It's maintained by a central team who are resonsible for any vulnerabilities in it. This is why we're not using a multi-stage Dockerfile here, because each Dockerfile, and the resulting image, is owned by a separate team.
 
 For our demo the Dockerfile looks like:
 
