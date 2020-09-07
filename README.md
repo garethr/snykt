@@ -2,6 +2,8 @@
 
 An example project using a hierarchy of images and using Snyk to test each in turn. This should be relevant in organisations where a central team or teams maintains some images which are then used by several application teams.
 
+![Showing vulnerabilities in Snyk](assets/monitor.png)
+
 ## Image hierarchy
 
 ### Base

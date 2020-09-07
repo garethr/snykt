@@ -1,0 +1,242 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  SNYK-DEBIAN10-APT-407502:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-BASH-536280:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-COREUTILS-317465:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-COREUTILS-317494:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-EXPAT-358079:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GCC8-347558:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GCC8-469413:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-338106:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-338163:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-356371:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-356671:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-356735:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-356875:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-452228:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-452267:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-453375:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-453640:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-534995:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-559181:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-559488:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-559493:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GLIBC-564233:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GNUPG2-535553:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GNUTLS28-340755:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-GNUTLS28-609778:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-LIBGCRYPT20-391902:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-LIBGCRYPT20-450771:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-LIBGCRYPT20-460489:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-LIBIDN2-474100:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-LIBSECCOMP-341044:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-LIBTASN16-339585:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-LZ4-473072:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-OPENSSL-374709:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-OPENSSL-374996:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-OPENSSL-536856:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-PCRE3-345321:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-PCRE3-345353:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-PCRE3-345502:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-PCRE3-345530:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-PCRE3-572367:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-PCRE3-572368:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-PERL-327793:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-PERL-570792:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-PERL-570797:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-PERL-570802:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SHADOW-306205:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SHADOW-306230:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SHADOW-306250:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SHADOW-539852:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-466337:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-535551:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-535712:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-537251:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-537598:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-539763:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-539769:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-539773:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-540471:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-540568:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-551930:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-565195:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-565214:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-570318:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-570323:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-570487:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-570494:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-570498:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-570723:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-571613:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SQLITE3-574691:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SYSTEMD-305144:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SYSTEMD-342768:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SYSTEMD-345386:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SYSTEMD-345391:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SYSTEMD-346788:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SYSTEMD-542807:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-SYSTEMD-570991:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-TAR-312331:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+  SNYK-DEBIAN10-TAR-341203:
+    - '*':
+        reason: Base image vulnerability from snykt/base
+patch: {}

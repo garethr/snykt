@@ -18,7 +18,28 @@ snyk-base:
 snyk-%:
 	@snyk container test $(REPO)/$(NAME) --file=$(NAME)/Dockerfile --exclude-base-image-vulns
 
-*:
+ignores:
+	mkdir -f ignores
+
+ignore-%: ignores
+	@snyk container test $(REPO)/$(NAME) --file=$(NAME)/Dockerfile --json | jq  '[.vulnerabilities[] | .id] | unique | .[]' | xargs -L1 -I'{}' snyk ignore --id='{}' --reason="Base image vulnerability from $(REPO)/$(NAME)"
+	@mv .snyk ignores/$(NAME).snyk
+	@sed -i '' '/expires/d' ignores/$(NAME).snyk
+
+ignore: ignore-base ignore-middleware
+
+monitor: monitor-base monitor-middleware monitor-app
+
+monitor-base:
+	@snyk container monitor $(REPO)/$(NAME) --file=$(NAME)/Dockerfile --project-name=$(REPO)/$(NAME)
+
+monitor-middleware:
+	@snyk container monitor $(REPO)/$(NAME) --file=$(NAME)/Dockerfile --policy-path=ignores/base.snyk --project-name=$(REPO)/$(NAME)
+
+monitor-app:
+	@snyk container monitor $(REPO)/$(NAME) --file=$(NAME)/Dockerfile --policy-path=ignores/middleware.snyk --project-name=$(REPO)/$(NAME)
+
+base middleware app: check-buildkit
 	@$(BUILD) $(REPO)/$@ $@
 
-.PHONY: base middleware app snyk-%
+.PHONY: build base middleware app monitor monitor-% snyk-% ignore-% ignore
