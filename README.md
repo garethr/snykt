@@ -89,7 +89,7 @@ According to our scan, you are currently using the most secure version of the se
 Because the vulnerabilities in the base image are the responsibility of the central team, the middleware team can focus just on vulnerabilities introduced by them. For this we use the `--excluse-base-image-vulns` flag.
 
 ```console
-$ snyk container test snykt/middleware --file=base/Dockerfile --exclude-base-image-vulns
+$ snyk container test snykt/middleware --file=middleware/Dockerfile --exclude-base-image-vulns
 ...
 ✗ Medium severity vulnerability found in sqlite3/libsqlite3-0
   Description: CVE-2020-13631
@@ -129,7 +129,7 @@ Note here we _only_ identified the vulnerabilities introduced by the middleware 
 Finally the application teams can build there images on top of the middleware image, and are then responsible for the vulnerabilities that they introduce.
 
 ```console
-$ snyk container test snykt/app --file=base/Dockerfile --exclude-base-image-vulns
+$ snyk container test snykt/app --file=app/Dockerfile --exclude-base-image-vulns
 Testing snykt/app...
 
 
