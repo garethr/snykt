@@ -5,6 +5,16 @@ NAME=$$(echo $@ | cut -d "-" -f 2)
 
 default: build
 
+check-conftest:
+ifeq (, $(shell which conftest))
+	$(error "Please install Conftest: https://www.conftest.dev")
+endif
+
+check-snykout:
+ifeq (, $(shell which snykout))
+	$(error "Please install SnykOut: https://github.com/garethr/snykout")
+endif
+
 check-buildkit:
 ifndef DOCKER_BUILDKIT
 	$(error You must enable Buildkit for Docker, by setting DOCKER_BUILDKIT=1)
@@ -42,7 +52,10 @@ monitor-app:
 base middleware app: check-buildkit
 	@$(BUILD) $(REPO)/$@ $@
 
-snykout-%:
+snykout-%: checkout-snykout
 	@snyk container test $(REPO)/$(NAME) --json --file=$(NAME)/Dockerfile | snykout -
 
-.PHONY: build base middleware app monitor monitor-% snyk-% snykout-% ignore-% ignore
+conftest-%: check-conftest
+	@snyk container test $(REPO)/$(NAME) --json --file=$(NAME)/Dockerfile | conftest test -
+
+.PHONY: build base middleware app monitor monitor-% snyk-% snykout-% conftest-% ignore-% ignore
