@@ -42,4 +42,7 @@ monitor-app:
 base middleware app: check-buildkit
 	@$(BUILD) $(REPO)/$@ $@
 
-.PHONY: build base middleware app monitor monitor-% snyk-% ignore-% ignore
+snykout-%:
+	@snyk container test $(REPO)/$(NAME) --json --file=$(NAME)/Dockerfile | snykout -
+
+.PHONY: build base middleware app monitor monitor-% snyk-% snykout-% ignore-% ignore
