@@ -58,4 +58,6 @@ snykout-%: checkout-snykout
 conftest-%: check-conftest
 	@snyk container test $(REPO)/$(NAME) --json --file=$(NAME)/Dockerfile | conftest test -
 
-.PHONY: build base middleware app monitor monitor-% snyk-% snykout-% conftest-% ignore-% ignore
+conftest: conftest-base contest-middlewar conftest-app
+
+.PHONY: build base middleware app monitor monitor-% snyk-% snykout-% conftest conftest-% ignore-% ignore
