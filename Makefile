@@ -1,4 +1,4 @@
-REPO := snykt
+REPO := ghcr.io/garethr/snykt
 BUILD = docker build -t
 
 NAME=$$(echo $@ | cut -d "-" -f 2)
@@ -50,14 +50,25 @@ monitor-app:
 	@snyk container monitor $(REPO)/$(NAME) --file=$(NAME)/Dockerfile --policy-path=ignores/middleware.snyk --project-name=$(REPO)/$(NAME)
 
 base middleware app: check-buildkit
-	@$(BUILD) $(REPO)/$@ $@
+	$(BUILD) $(REPO)/$@ $@
 
-snykout-%: checkout-snykout
+snykout-%: check-snykout
 	@snyk container test $(REPO)/$(NAME) --json --file=$(NAME)/Dockerfile | snykout -
+
+conftest-middleware:
+	@snyk container monitor $(REPO)/$(NAME) --json --file=$(NAME)/Dockerfile --policy-path=ignores/base.snyk | conftest test -
+
+conftest-app:
+	@snyk container test $(REPO)/$(NAME) --json --file=$(NAME)/Dockerfile --policy-path=ignores/middleware.snyk | conftest test -
 
 conftest-%: check-conftest
 	@snyk container test $(REPO)/$(NAME) --json --file=$(NAME)/Dockerfile | conftest test -
 
 conftest: conftest-base contest-middlewar conftest-app
 
-.PHONY: build base middleware app monitor monitor-% snyk-% snykout-% conftest conftest-% ignore-% ignore
+push-%:
+	@docker push $(REPO)/$(NAME)
+
+push: push-base push-middleware push-app
+
+.PHONY: build base middleware app monitor monitor-% snyk-% snykout-% conftest conftest-% ignore-% ignore push-% push

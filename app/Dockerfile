@@ -1,4 +1,4 @@
-FROM snykt/middleware
+FROM ghcr.io/garethr/snykt/middleware
 
 EXPOSE 8080
 
